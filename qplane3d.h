@@ -42,13 +42,13 @@
 #ifndef QPLANE3D_H
 #define QPLANE3D_H
 
-#include <Qt3D/qray3d.h>
+#include "qray3d.h"
 #include <QtGui/qvector3d.h>
 #include <QtCore/qnumeric.h>
 
 QT_BEGIN_NAMESPACE
 
-class Q_QT3D_EXPORT QPlane3D
+class Q_MATH_3D_EXPORT QPlane3D
 {
 public:
     QPlane3D();
@@ -140,12 +140,12 @@ inline bool qFuzzyCompare(const QPlane3D &plane1, const QPlane3D &plane2)
 }
 
 #ifndef QT_NO_DEBUG_STREAM
-Q_QT3D_EXPORT QDebug operator<<(QDebug dbg, const QPlane3D &plane);
+Q_MATH_3D_EXPORT QDebug operator<<(QDebug dbg, const QPlane3D &plane);
 #endif
 
 #ifndef QT_NO_DATASTREAM
-Q_QT3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QPlane3D &plane);
-Q_QT3D_EXPORT QDataStream &operator>>(QDataStream &stream, QPlane3D &plane);
+Q_MATH_3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QPlane3D &plane);
+Q_MATH_3D_EXPORT QDataStream &operator>>(QDataStream &stream, QPlane3D &plane);
 #endif
 
 QT_END_NAMESPACE

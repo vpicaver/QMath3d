@@ -12,9 +12,9 @@
 #include <QtCore/qglobal.h>
 
 #if defined(Q_MATH_3D)
-#  define Q_QT3D_EXPORT Q_DECL_EXPORT
+#  define Q_MATH_3D_EXPORT Q_DECL_EXPORT
 #else
-#  define Q_QT3D_EXPORT Q_DECL_IMPORT
+#  define Q_MATH_3D_EXPORT Q_DECL_IMPORT
 #endif
 
 #endif // SMALLQT3D_GLOBAL_H

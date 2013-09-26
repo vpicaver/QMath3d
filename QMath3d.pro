@@ -9,7 +9,7 @@ TEMPLATE = lib
 
 CONFIG += debug_and_release build_all
 
-DEFINES += SMALLQT3D_LIBRARY
+DEFINES += Q_MATH_3D
 
 SOURCES +=
 

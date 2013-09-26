@@ -42,8 +42,10 @@
 #ifndef QTRIANGLE3D_H
 #define QTRIANGLE3D_H
 
-#include <Qt3D/qplane3d.h>
-#include <Qt3D/qray3d.h>
+#include <smallqt3d_global.h>
+
+#include <qplane3d.h>
+#include <qray3d.h>
 
 #include <QtGui/qvector3d.h>
 #include <QtGui/qvector2d.h>
@@ -52,7 +54,7 @@ QT_BEGIN_NAMESPACE
 
 class QMatrix4x4;
 
-class Q_QT3D_EXPORT QTriangle3D
+class Q_MATH_3D_EXPORT QTriangle3D
 {
 public:
     QTriangle3D();
@@ -162,12 +164,12 @@ inline bool qFuzzyCompare
 }
 
 #ifndef QT_NO_DEBUG_STREAM
-Q_QT3D_EXPORT QDebug operator<<(QDebug dbg, const QTriangle3D &triangle);
+Q_MATH_3D_EXPORT QDebug operator<<(QDebug dbg, const QTriangle3D &triangle);
 #endif
 
 #ifndef QT_NO_DATASTREAM
-Q_QT3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QTriangle3D &triangle);
-Q_QT3D_EXPORT QDataStream &operator>>(QDataStream &stream, QTriangle3D &triangle);
+Q_MATH_3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QTriangle3D &triangle);
+Q_MATH_3D_EXPORT QDataStream &operator>>(QDataStream &stream, QTriangle3D &triangle);
 #endif
 
 QT_END_NAMESPACE

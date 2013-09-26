@@ -42,13 +42,13 @@
 #ifndef QRAY3D_H
 #define QRAY3D_H
 
-#include <Qt3D/qt3dglobal.h>
+#include <smallqt3d_global.h>
 #include <QtGui/qvector3d.h>
 #include <QtGui/qmatrix4x4.h>
 
 QT_BEGIN_NAMESPACE
 
-class Q_QT3D_EXPORT QRay3D
+class Q_MATH_3D_EXPORT QRay3D
 {
 public:
     QRay3D();
@@ -143,12 +143,12 @@ inline bool qFuzzyCompare(const QRay3D &ray1, const QRay3D &ray2)
 }
 
 #ifndef QT_NO_DEBUG_STREAM
-Q_QT3D_EXPORT QDebug operator<<(QDebug dbg, const QRay3D &ray);
+Q_MATH_3D_EXPORT QDebug operator<<(QDebug dbg, const QRay3D &ray);
 #endif
 
 #ifndef QT_NO_DATASTREAM
-Q_QT3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QRay3D &ray);
-Q_QT3D_EXPORT QDataStream &operator>>(QDataStream &stream, QRay3D &ray);
+Q_MATH_3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QRay3D &ray);
+Q_MATH_3D_EXPORT QDataStream &operator>>(QDataStream &stream, QRay3D &ray);
 #endif
 
 QT_END_NAMESPACE

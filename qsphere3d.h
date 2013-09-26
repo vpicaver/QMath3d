@@ -42,7 +42,7 @@
 #ifndef QSPHERE3D_H
 #define QSPHERE3D_H
 
-#include <Qt3D/qt3dglobal.h>
+#include <smallqt3d_global.h>
 #include <QtGui/qvector3d.h>
 
 QT_BEGIN_NAMESPACE
@@ -52,7 +52,7 @@ class QRay3D;
 class QBox3D;
 class QPlane3D;
 
-class Q_QT3D_EXPORT QSphere3D
+class Q_MATH_3D_EXPORT QSphere3D
 {
 public:
     QSphere3D();
@@ -143,12 +143,12 @@ inline bool qFuzzyCompare(const QSphere3D &sphere1, const QSphere3D &sphere2)
 }
 
 #ifndef QT_NO_DEBUG_STREAM
-Q_QT3D_EXPORT QDebug operator<<(QDebug dbg, const QSphere3D &sphere);
+Q_MATH_3D_EXPORT QDebug operator<<(QDebug dbg, const QSphere3D &sphere);
 #endif
 
 #ifndef QT_NO_DATASTREAM
-Q_QT3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QSphere3D &sphere);
-Q_QT3D_EXPORT QDataStream &operator>>(QDataStream &stream, QSphere3D &sphere);
+Q_MATH_3D_EXPORT QDataStream &operator<<(QDataStream &stream, const QSphere3D &sphere);
+Q_MATH_3D_EXPORT QDataStream &operator>>(QDataStream &stream, QSphere3D &sphere);
 #endif
 
 QT_END_NAMESPACE
