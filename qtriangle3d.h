@@ -42,10 +42,10 @@
 #ifndef QTRIANGLE3D_H
 #define QTRIANGLE3D_H
 
-#include <smallqt3d_global.h>
+#include "smallqt3d_global.h"
 
-#include <qplane3d.h>
-#include <qray3d.h>
+#include "qplane3d.h"
+#include "qray3d.h"
 
 #include <QtGui/qvector3d.h>
 #include <QtGui/qvector2d.h>

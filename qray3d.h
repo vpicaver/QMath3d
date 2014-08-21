@@ -42,7 +42,7 @@
 #ifndef QRAY3D_H
 #define QRAY3D_H
 
-#include <smallqt3d_global.h>
+#include "smallqt3d_global.h"
 #include <QtGui/qvector3d.h>
 #include <QtGui/qmatrix4x4.h>
 

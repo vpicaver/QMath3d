@@ -42,8 +42,8 @@
 #ifndef QBOX3D_H
 #define QBOX3D_H
 
-#include <smallqt3d_global.h>
-#include <qray3d.h>
+#include "smallqt3d_global.h"
+#include "qray3d.h"
 
 QT_BEGIN_NAMESPACE
 

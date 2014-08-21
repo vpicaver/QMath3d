@@ -42,7 +42,7 @@
 #ifndef QSPHERE3D_H
 #define QSPHERE3D_H
 
-#include <smallqt3d_global.h>
+#include "smallqt3d_global.h"
 #include <QtGui/qvector3d.h>
 
 QT_BEGIN_NAMESPACE
