@@ -2,7 +2,18 @@ import qbs.base 1.0
 
 DynamicLibrary {
     name: "QMath3d"
+    Depends { name: "cpp" }
     Depends { name: "Qt"; submodules: [ "core", "gui"] }
+
+    Group {
+        fileTagsFilter: ["dynamiclibrary"]
+        qbs.install: true
+    }
+
+    Export {
+        Depends { name: "cpp" }
+        cpp.includePaths: ["."]
+    }
 
     files: [
         "qbox3d.h",
@@ -21,4 +32,9 @@ DynamicLibrary {
     cpp.includePaths: [
         "."
     ]
+
+    Properties {
+        condition: qbs.targetOS.contains("windows")
+        cpp.defines: ["Q_MATH_3D"]
+    }
 }
