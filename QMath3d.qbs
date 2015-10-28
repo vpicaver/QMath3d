@@ -7,6 +7,13 @@ DynamicLibrary {
 
     Group {
         fileTagsFilter: ["dynamiclibrary"]
+        qbs.installDir: "lib/" + (qbs.targetOS.contains("darwin") ? product.name + ".framework/Versions/A" : "")
+        qbs.install: true
+    }
+
+    Group {
+        fileTagsFilter: ["bundle"]
+        qbs.installDir: "lib"
         qbs.install: true
     }
 
@@ -32,6 +39,8 @@ DynamicLibrary {
     cpp.includePaths: [
         "."
     ]
+
+    cpp.installNamePrefix: qbs.installRoot + "/lib"
 
     Properties {
         condition: qbs.targetOS.contains("windows")
