@@ -6,12 +6,14 @@ DynamicLibrary {
     Depends { name: "Qt"; submodules: [ "core", "gui"] }
 
     Group {
+        condition: qbs.targetOS.contains("osx")
         fileTagsFilter: ["dynamiclibrary"]
-        qbs.installDir: "lib/" + (qbs.targetOS.contains("darwin") ? product.name + ".framework/Versions/A" : "")
+        qbs.installDir: "lib/" + (qbs.targetOS.contains("osx") ? product.name + ".framework/Versions/A" : "")
         qbs.install: true
     }
 
     Group {
+        condition: qbs.targetOS.contains("osx")
         fileTagsFilter: ["bundle"]
         qbs.installDir: "lib"
         qbs.install: true
