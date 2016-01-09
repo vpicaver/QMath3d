@@ -2,25 +2,24 @@ import qbs.base 1.0
 
 DynamicLibrary {
     name: "QMath3d"
+
+    //For mac os x we need to build dylib instead of framework bundle. When running
+    //macdepolyqt for release, with a framework, an extra "lib" is added to the
+    //path which prevents macdeployqt from finding the correct library's location
+    consoleApplication: true
+
+    readonly property string rpath: buildDirectory
+
     Depends { name: "cpp" }
     Depends { name: "Qt"; submodules: [ "core", "gui"] }
-
-    Group {
-        fileTagsFilter: ["dynamiclibrary"]
-        qbs.installDir: "lib/" + (qbs.targetOS.contains("osx") ? product.name + ".framework/Versions/A" : "")
-        qbs.install: true
-    }
-
-    Group {
-        fileTagsFilter: ["bundle"]
-        qbs.installDir: "lib"
-        qbs.install: true
-    }
 
     Export {
         Depends { name: "cpp" }
         cpp.includePaths: ["."]
+        cpp.rpaths: product.rpath
     }
+
+    cpp.rpaths: [Qt.core.libPath]
 
     files: [
         "qbox3d.h",
@@ -40,7 +39,7 @@ DynamicLibrary {
         "."
     ]
 
-    cpp.installNamePrefix: qbs.installRoot + "/lib"
+    cpp.installNamePrefix: "@rpath"
 
     Properties {
         condition: qbs.targetOS.contains("windows")
