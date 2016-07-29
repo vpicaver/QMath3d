@@ -7,6 +7,7 @@ DynamicLibrary {
     //macdepolyqt for release, with a framework, an extra "lib" is added to the
     //path which prevents macdeployqt from finding the correct library's location
     consoleApplication: true
+    cpp.cxxLanguageVersion: (Qt.core.versionMajor >= 5 && Qt.core.versionMinor >= 7 ? "c++11" : "c++98");
 
     readonly property string rpath: buildDirectory
 
@@ -17,6 +18,7 @@ DynamicLibrary {
         Depends { name: "cpp" }
         cpp.includePaths: ["."]
         cpp.rpaths: product.rpath
+        cpp.cxxLanguageVersion: (Qt.core.versionMajor >= 5 && Qt.core.versionMinor >= 7 ? "c++11" : "c++98");
     }
 
     Group {
