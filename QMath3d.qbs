@@ -46,7 +46,7 @@ DynamicLibrary {
         "."
     ]
 
-    cpp.installNamePrefix: "@rpath"
+    cpp.sonamePrefix: "@rpath"
 
     Properties {
         condition: qbs.targetOS.contains("windows")
