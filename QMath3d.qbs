@@ -46,7 +46,10 @@ DynamicLibrary {
         "."
     ]
 
-    cpp.sonamePrefix: "@rpath"
+    Properties {
+        condition: qbs.targetOS.contains("osx")
+        cpp.sonamePrefix: "@rpath"
+    }
 
     Properties {
         condition: qbs.targetOS.contains("windows")
