@@ -1,4 +1,4 @@
-import qbs.base 1.0
+import qbs
 
 DynamicLibrary {
     name: "QMath3d"
@@ -23,6 +23,7 @@ DynamicLibrary {
 
     Group {
         fileTagsFilter: ["dynamiclibrary"]
+        condition: qbs.buildVariant == "release"
         qbs.install: qbs.targetOS.contains("windows")
     }
 
