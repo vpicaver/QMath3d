@@ -13,6 +13,7 @@ DynamicLibrary {
 
     Depends { name: "cpp" }
     Depends { name: "Qt"; submodules: [ "core", "gui"] }
+    Depends { name: "bundle" }
 
     Export {
         Depends { name: "cpp" }
