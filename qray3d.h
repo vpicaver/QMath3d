@@ -117,13 +117,13 @@ inline QVector3D QRay3D::point(float t) const
 
 inline void QRay3D::transform(const QMatrix4x4 &matrix)
 {
-    m_origin = matrix * m_origin;
+    m_origin = matrix.mapVector(m_origin);
     m_direction = matrix.mapVector(m_direction);
 }
 
 inline QRay3D QRay3D::transformed(const QMatrix4x4 &matrix) const
 {
-    return QRay3D(matrix * m_origin, matrix.mapVector(m_direction));
+    return QRay3D(matrix.map(m_origin), matrix.mapVector(m_direction));
 }
 
 inline bool QRay3D::operator==(const QRay3D &other)

@@ -44,6 +44,7 @@
 
 #include "smallqt3d_global.h"
 #include <QtGui/qvector3d.h>
+#include <QVariant>
 
 QT_BEGIN_NAMESPACE
 

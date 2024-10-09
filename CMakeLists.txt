@@ -20,10 +20,10 @@ add_library(QMath3d SHARED
 )
 
 # Find Qt packages
-find_package(Qt5 COMPONENTS Core Gui REQUIRED)
+find_package(Qt6 COMPONENTS Core Gui REQUIRED)
 
 # Add dependencies
-target_link_libraries(QMath3d PRIVATE Qt5::Core Qt5::Gui)
+target_link_libraries(QMath3d PRIVATE Qt6::Core Qt6::Gui)
 
 # Include directories
 target_include_directories(QMath3d PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
