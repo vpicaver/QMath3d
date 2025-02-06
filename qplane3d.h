@@ -45,11 +45,16 @@
 #include "qray3d.h"
 #include <QtGui/qvector3d.h>
 #include <QtCore/qnumeric.h>
+#include <QQmlEngine>
 
 QT_BEGIN_NAMESPACE
 
 class Q_MATH_3D_EXPORT QPlane3D
 {
+    Q_GADGET
+    QML_NAMED_ELEMENT(plane3d)
+    QML_UNCREATABLE("QPlane3D shouldn't be create from qml")
+
 public:
     QPlane3D();
     QPlane3D(const QVector3D &point, const QVector3D &normal);
