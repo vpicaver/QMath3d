@@ -119,13 +119,13 @@ inline void QPlane3D::setNormal(const QVector3D& value)
 
 inline void QPlane3D::transform(const QMatrix4x4 &matrix)
 {
-    m_origin = matrix.mapVector(m_origin);
+    m_origin = matrix.map(m_origin);
     m_normal = matrix.mapVector(m_normal);
 }
 
 inline QPlane3D QPlane3D::transformed(const QMatrix4x4 &matrix) const
 {
-    return QPlane3D(matrix.mapVector(m_origin), matrix.mapVector(m_normal));
+    return QPlane3D(matrix.map(m_origin), matrix.mapVector(m_normal));
 }
 
 inline bool QPlane3D::operator==(const QPlane3D &other)

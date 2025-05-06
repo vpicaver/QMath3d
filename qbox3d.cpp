@@ -584,14 +584,14 @@ QBox3D QBox3D::transformed(const QMatrix4x4& matrix) const
     if (boxtype != Finite)
         return *this;
     QBox3D result;
-    result.unite(matrix.mapVector(mincorner));
-    result.unite(matrix.mapVector(QVector3D(mincorner.x(), mincorner.y(), maxcorner.z())));
-    result.unite(matrix.mapVector(QVector3D(mincorner.x(), maxcorner.y(), maxcorner.z())));
-    result.unite(matrix.mapVector(QVector3D(mincorner.x(), maxcorner.y(), mincorner.z())));
-    result.unite(matrix.mapVector(QVector3D(maxcorner.x(), mincorner.y(), mincorner.z())));
-    result.unite(matrix.mapVector(QVector3D(maxcorner.x(), maxcorner.y(), mincorner.z())));
-    result.unite(matrix.mapVector(QVector3D(maxcorner.x(), mincorner.y(), maxcorner.z())));
-    result.unite(matrix.mapVector(maxcorner));
+    result.unite(matrix.map(mincorner));
+    result.unite(matrix.map(QVector3D(mincorner.x(), mincorner.y(), maxcorner.z())));
+    result.unite(matrix.map(QVector3D(mincorner.x(), maxcorner.y(), maxcorner.z())));
+    result.unite(matrix.map(QVector3D(mincorner.x(), maxcorner.y(), mincorner.z())));
+    result.unite(matrix.map(QVector3D(maxcorner.x(), mincorner.y(), mincorner.z())));
+    result.unite(matrix.map(QVector3D(maxcorner.x(), maxcorner.y(), mincorner.z())));
+    result.unite(matrix.map(QVector3D(maxcorner.x(), mincorner.y(), maxcorner.z())));
+    result.unite(matrix.map(maxcorner));
     return result;
 }
 

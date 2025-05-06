@@ -1,1 +1,1 @@
-#include "qplane3d.h"
+#include "qplane3d.h" // IWYU pragma: export
