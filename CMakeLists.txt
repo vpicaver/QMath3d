@@ -19,6 +19,10 @@ add_library(QMath3d SHARED
     smallqt3d_global.h
 )
 
+set_target_properties(QMath3d PROPERTIES
+    AUTOMOC ON
+)
+
 # Find Qt packages
 find_package(Qt6 COMPONENTS Core Gui Qml REQUIRED)
 
@@ -41,3 +45,4 @@ install(TARGETS QMath3d
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
 )
+
