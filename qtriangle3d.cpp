@@ -238,9 +238,9 @@ float QTriangle3D::intersection(const QRay3D &ray) const
 */
 void QTriangle3D::transform(const QMatrix4x4 &matrix)
 {
-    m_p = matrix.mapVector(m_p);
-    m_q = matrix.mapVector(m_q);
-    m_r = matrix.mapVector(m_r);
+    m_p = matrix.map(m_p);
+    m_q = matrix.map(m_q);
+    m_r = matrix.map(m_r);
 }
 
 /*!
@@ -251,9 +251,7 @@ void QTriangle3D::transform(const QMatrix4x4 &matrix)
 */
 QTriangle3D QTriangle3D::transformed(const QMatrix4x4 &matrix) const
 {
-    return QTriangle3D(matrix.mapVector(m_p),
-                       matrix.mapVector(m_q),
-                       matrix.mapVector(m_r));
+    return QTriangle3D(matrix.map(m_p), matrix.map(m_q), matrix.map(m_r));
 }
 
 /*!

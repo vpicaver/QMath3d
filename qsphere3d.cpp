@@ -304,8 +304,7 @@ float QSphere3D::intersection(const QRay3D &ray) const
 */
 QSphere3D QSphere3D::transformed(const QMatrix4x4 &matrix) const
 {
-    return QSphere3D(matrix.mapVector(m_center),
-                     matrix.mapVector(QVector3D(m_radius, 0, 0)).length());
+    return QSphere3D(matrix.map(m_center), matrix.mapVector(QVector3D(m_radius, 0, 0)).length());
 }
 
 /*!
