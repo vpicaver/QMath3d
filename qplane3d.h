@@ -52,8 +52,7 @@ QT_BEGIN_NAMESPACE
 class Q_MATH_3D_EXPORT QPlane3D
 {
     Q_GADGET
-    QML_NAMED_ELEMENT(plane3d)
-    QML_UNCREATABLE("QPlane3D shouldn't be create from qml")
+    QML_VALUE_TYPE(plane3d)
 
 public:
     QPlane3D();

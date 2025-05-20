@@ -4,8 +4,12 @@ project(QMath3d LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
+# Find Qt packages
+find_package(Qt6 COMPONENTS Core Qml Gui REQUIRED)
+
 # Add dynamic library
-add_library(QMath3d SHARED
+qt_add_library(QMath3d STATIC
     qbox3d.h
     qplane3d.h
     qray3d.h
@@ -23,11 +27,8 @@ set_target_properties(QMath3d PROPERTIES
     AUTOMOC ON
 )
 
-# Find Qt packages
-find_package(Qt6 COMPONENTS Core Gui Qml REQUIRED)
-
 # Add dependencies
-target_link_libraries(QMath3d PRIVATE Qt6::Core Qt6::Gui Qt6::Qml)
+target_link_libraries(QMath3d PRIVATE Qt6::Core Qt6::Qml Qt6::Gui)
 
 # Include directories
 target_include_directories(QMath3d PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
