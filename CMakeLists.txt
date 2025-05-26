@@ -47,3 +47,7 @@ install(TARGETS QMath3d
     RUNTIME DESTINATION bin
 )
 
+option(WITH_TESTS "enable tests" ON)
+if (WITH_TESTS)
+    add_subdirectory(tests)
+endif()
