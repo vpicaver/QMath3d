@@ -3,6 +3,7 @@
 #include <QBox3D>
 #include <QRay3D>
 #include <QtMath>
+#include <QQuaternion>
 
 namespace {
 auto volume(const QBox3D box) -> qreal
