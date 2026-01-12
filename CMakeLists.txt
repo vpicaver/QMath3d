@@ -37,7 +37,7 @@ target_include_directories(QMath3d PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 if(APPLE)
     set_target_properties(QMath3d PROPERTIES INSTALL_RPATH "@loader_path/../lib")
 elseif(WIN32)
-    target_compile_definitions(QMath3d PRIVATE Q_MATH_3D)
+    target_compile_definitions(QMath3d PUBLIC Q_MATH_3D_STATIC)
 endif()
 
 # Installation settings (assuming you want to install the library)

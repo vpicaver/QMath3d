@@ -11,7 +11,9 @@
 
 #include <QtCore/qglobal.h>
 
-#if defined(Q_MATH_3D)
+#if defined(Q_MATH_3D_STATIC)
+#  define Q_MATH_3D_EXPORT
+#elif defined(Q_MATH_3D)
 #  define Q_MATH_3D_EXPORT Q_DECL_EXPORT
 #else
 #  define Q_MATH_3D_EXPORT Q_DECL_IMPORT
